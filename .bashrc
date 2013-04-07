@@ -92,6 +92,7 @@ alias tree='tree -Csu'     # nice alternative to 'recursive ls'
 # tailoring 'less'
 #-------------------------------------------------------------
 
+alias vi='vim'
 alias more='less'
 export PAGER=less
 export LESSCHARSET='latin1'
