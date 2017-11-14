@@ -1,0 +1,24 @@
+function vssh()
+{
+    vagrant ssh $1
+}
+function vup()
+{
+    vagrant up $1
+}
+function vdestroy()
+{
+    vagrant destroy $1
+}
+function vhalt()
+{
+    vagrant halt $1
+}
+function vreload()
+{
+    vagrant reload $1
+}
+function vpro()
+{
+    vagrant provision $1
+}

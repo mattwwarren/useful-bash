@@ -1,35 +1,15 @@
-# PERSONAL $HOME/.bashrc FILE for bash-3.0 (or later)
-# By Emmanuel Rouat <no-email>
-#
-# Last modified: Sun Nov 30 16:27:45 CET 2008
-# This file is read (normally) by interactive shells only.
-# Here is the place to define your aliases, functions and
-# other interactive features like your prompt.
-#
-# The majority of the code here assumes you are on a GNU 
-# system (most likely a Linux box) and is based on code found
-# on Usenet or internet. See for instance:
-#
-# http://tldp.org/LDP/abs/html/index.html
-# http://www.caliban.org/bash/
-# http://www.shelldorado.com/scripts/categories.html
-# http://www.dotfiles.org/
-#
-# This bashrc file is a bit overcrowded -- remember it is just
-# just an example. Tailor it to your needs.
-#
-#
-#=============================================================
+#-------------------------------------------------------------
+# Test for alias config
+#-------------------------------------------------------------
 
-# --> Comments added by HOWTO author.
-
+test -s ~/.alias && . ~/.alias || true
 
 #-------------------------------------------------------------
 # Source global definitions (if any)
 #-------------------------------------------------------------
 
-
-PS1="[\u@\h] \w > "
+RANDO_WORD=`shuf -n1 /usr/share/dict/american`
+PS1="[${RANDO_WORD}@\h] \w >\$ "
 
 #===============================================================
 #
@@ -49,6 +29,7 @@ PS1="[\u@\h] \w > "
 #-------------------
 
 alias rm='rm -i'
+alias cpf='/bin/cp -f'
 alias cp='cp -i'
 alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
@@ -99,7 +80,7 @@ export LESSCHARSET='latin1'
 export LESSOPEN='|/usr/bin/lesspipe.sh %s 2>&-'
    # Use this if lesspipe.sh exists
 #export LESS='-i -N -w  -z-4 -g -e -M -X -F -R -P%t?f%f \
-:stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
+#:stdin .?pb%pb\%:?lbLine %lb:?bbByte %bb:-...'
 
 
 #-------------------------------------------------------------
@@ -587,5 +568,11 @@ complete -o default -F _meta_comp command type which man nice time
 # sh-shell:bash
 # End:
 
-
+if [ $(find ~/.bashrc.d/ -maxdepth 1 -mindepth 1 -type f | wc -l) -gt 0 ]
+then
+   for f in $(find ~/.bashrc.d/ -maxdepth 1 -mindepth 1 -type f)
+   do
+      source $f
+   done
+fi
 
