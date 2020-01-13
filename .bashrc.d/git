@@ -4,8 +4,6 @@ alias gckm='git checkout master'
 alias gca='git commit -a'
 alias gp='git pull'
 alias gpsh='git push'
-
-function gpo()
-{
-  git push -u origin $1
+function gpo() {
+    git push -u origin "${GIT_BRANCH}"
 }
