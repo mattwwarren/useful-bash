@@ -21,4 +21,4 @@ ln -s ${CHECKOUTDIR}/.bashrc ~/.bashrc
 ln -s ${CHECKOUTDIR}/.bashrc.d ~/.bashrc.d
 ln -s ${CHECKOUTDIR}/.bash_profile ~/.bash_profile
 
-print "If you see no errors, you can restart your shell session with expected profile settings"
+echo -n "If you see no errors, you can restart your shell session with expected profile settings"

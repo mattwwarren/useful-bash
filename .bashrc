@@ -10,6 +10,7 @@ test -s ~/.alias && . ~/.alias || true
 
 RANDO_WORD=`shuf -n1 /usr/share/dict/american`
 PS1="[${RANDO_WORD}@\h] \w >\$ "
+xset -b
 
 #===============================================================
 #
