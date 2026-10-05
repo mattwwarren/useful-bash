@@ -29,9 +29,6 @@ xset -b
 # Personnal Aliases
 #-------------------
 
-alias rm='rm -i'
-alias cpf='/bin/cp -f'
-alias cp='cp -i'
 alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
@@ -577,3 +574,5 @@ then
    done
 fi
 
+
+export PATH="/home/matthew/.local/bin:$PATH"
